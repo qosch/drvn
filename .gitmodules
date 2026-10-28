@@ -1,0 +1,24 @@
+[submodule "external/stm32g4xx_hal_driver"]
+	path = external/stm32g4xx_hal_driver
+	url = https://github.com/STMicroelectronics/stm32g4xx-hal-driver
+	shallow = true
+[submodule "external/cmsis_device_g4"]
+	path = external/cmsis_device_g4
+	url = https://github.com/STMicroelectronics/cmsis-device-g4
+	shallow = true
+[submodule "external/cmsis_core"]
+	path = external/cmsis_core
+	url = https://github.com/STMicroelectronics/cmsis-core
+	shallow = true
+[submodule "external/FreeRTOS-Kernel"]
+	path = external/FreeRTOS-Kernel
+	url = https://github.com/FreeRTOS/FreeRTOS-Kernel
+	shallow = true
+[submodule "external/doctest"]
+	path = external/doctest
+	url = https://github.com/doctest/doctest
+	shallow = true
+[submodule "external/au"]
+	path = external/au
+	url = https://github.com/aurora-opensource/au
+	shallow = true
