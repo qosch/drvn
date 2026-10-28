@@ -162,14 +162,14 @@ extern "C" void Reset_Handler()
 
 namespace {
 
-struct isr_vector_t
+struct IsrVector
 {
-  const void* initial_stack_pointer;
-  void (*handlers[117])();
+  const void* initial_stack_pointer_;
+  void (*handlers_[117])();
 };
 
 // 0: initial SP. 1-15: ARMv7-M core exceptions, reserved slots null. 16+: IRQn_Type, stm32g474xx.h
-constinit const isr_vector_t isr_vector [[gnu::section(".isr_vector")]] [[gnu::used]] = {
+constinit const IsrVector isr_vector [[gnu::section(".isr_vector")]] [[gnu::used]] = {
   &__stack_top,
   {
     &Reset_Handler,
