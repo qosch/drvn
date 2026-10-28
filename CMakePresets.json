@@ -38,5 +38,21 @@
       "name": "devboard-release",
       "configurePreset": "devboard-release"
     }
+  ],
+  "testPresets": [
+    {
+      "name": "devboard-debug",
+      "configurePreset": "devboard-debug",
+      "output": {
+        "outputOnFailure": true
+      }
+    },
+    {
+      "name": "devboard-release",
+      "configurePreset": "devboard-release",
+      "output": {
+        "outputOnFailure": true
+      }
+    }
   ]
 }

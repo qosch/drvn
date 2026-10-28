@@ -16,6 +16,8 @@ option(DRVN_HOST "Build host artifacts (tests) instead of firmware" OFF)
 
 add_compile_options(-Wall -Wextra -Wconversion -Wdouble-promotion -ffunction-sections -fdata-sections)
 
+enable_testing()
+
 if(NOT DRVN_HOST)
   if(NOT CMAKE_SYSTEM_NAME STREQUAL "Generic")
     message(FATAL_ERROR "Firmware builds need the ARM toolchain file; use the devboard-debug or devboard-release preset")
@@ -37,4 +39,9 @@ if(NOT DRVN_HOST)
   add_subdirectory(app)
 
   target_link_libraries(boards PUBLIC mcu)
+
+  find_package(Python3 COMPONENTS Interpreter REQUIRED)
+  add_test(NAME elf_checks
+    COMMAND Python3::Interpreter ${PROJECT_SOURCE_DIR}/tools/check_elf.py $<TARGET_FILE:app>
+  )
 endif()
