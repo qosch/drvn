@@ -1,6 +1,7 @@
 build/
 docs/reference/
 .cache/
+.zed/
 /compile_commands.json
 /CMakeCache.txt
 /CMakeFiles/
