@@ -1,0 +1,42 @@
+{
+  "version": 6,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 28,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "devboard-debug",
+      "displayName": "Dev board, debug (-Og)",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/devboard-debug",
+      "toolchainFile": "${sourceDir}/cmake/arm-none-eabi.cmake",
+      "cacheVariables": {
+        "BOARD": "devboard",
+        "CMAKE_BUILD_TYPE": "Debug"
+      }
+    },
+    {
+      "name": "devboard-release",
+      "displayName": "Dev board, release (-O2)",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/devboard-release",
+      "toolchainFile": "${sourceDir}/cmake/arm-none-eabi.cmake",
+      "cacheVariables": {
+        "BOARD": "devboard",
+        "CMAKE_BUILD_TYPE": "Release"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "devboard-debug",
+      "configurePreset": "devboard-debug"
+    },
+    {
+      "name": "devboard-release",
+      "configurePreset": "devboard-release"
+    }
+  ]
+}
