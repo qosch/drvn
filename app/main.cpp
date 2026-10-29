@@ -1,4 +1,4 @@
-int main()
-{
-  for (;;) {}
+int main() {
+  for (;;) {
+  }
 }
