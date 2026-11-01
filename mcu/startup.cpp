@@ -146,7 +146,7 @@ extern "C" void Reset_Handler() {
   __DSB();
   __ISB();
 
-  std::uint8_t* dst = __data_start;
+  std::uint8_t* dst       = __data_start;
   std::uint8_t const* src = __data_load;
   while (dst < __data_end) *dst++ = *src++;
 
