@@ -27,6 +27,16 @@
         "BOARD": "devboard",
         "CMAKE_BUILD_TYPE": "Release"
       }
+    },
+    {
+      "name": "host-tests",
+      "displayName": "Host tests",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/host-tests",
+      "cacheVariables": {
+        "DRVN_HOST": "ON",
+        "CMAKE_BUILD_TYPE": "Debug"
+      }
     }
   ],
   "buildPresets": [
@@ -37,9 +47,20 @@
     {
       "name": "devboard-release",
       "configurePreset": "devboard-release"
+    },
+    {
+      "name": "host-tests",
+      "configurePreset": "host-tests"
     }
   ],
   "testPresets": [
+    {
+      "name": "host-tests",
+      "configurePreset": "host-tests",
+      "output": {
+        "outputOnFailure": true
+      }
+    },
     {
       "name": "devboard-debug",
       "configurePreset": "devboard-debug",

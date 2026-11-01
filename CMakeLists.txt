@@ -44,4 +44,6 @@ if(NOT DRVN_HOST)
   add_test(NAME elf_checks
     COMMAND Python3::Interpreter ${PROJECT_SOURCE_DIR}/tools/check_elf.py $<TARGET_FILE:app>
   )
+else()
+  add_subdirectory(tests)
 endif()
