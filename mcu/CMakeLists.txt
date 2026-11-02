@@ -1,5 +1,6 @@
-add_library(mcu STATIC startup.cpp)
+add_library(mcu STATIC startup.cpp rcc.cpp)
 target_include_directories(mcu PUBLIC ${PROJECT_SOURCE_DIR})
+target_include_directories(mcu SYSTEM PUBLIC ${PROJECT_SOURCE_DIR}/external/au)
 target_compile_definitions(mcu PRIVATE ${DRVN_CHIP_DEFINE})
 
 # Only the LL drivers are ever used from the HAL driver repo (Inc/ holds both)
